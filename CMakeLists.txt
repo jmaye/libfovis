@@ -3,9 +3,9 @@ project(libfovis)
 
 find_package(catkin REQUIRED)
 
-find_package(Eigen REQUIRED)
+include($ENV{ROS_ROOT}/core/rosbuild/FindPkgConfig.cmake)
+pkg_check_modules(EIGEN REQUIRED eigen3)
 include_directories(${EIGEN_INCLUDE_DIRS})
-add_definitions(${EIGEN_DEFINITIONS})
 
 catkin_package(
   INCLUDE_DIRS libfovis
